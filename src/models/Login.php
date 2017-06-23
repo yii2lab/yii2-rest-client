@@ -1,7 +1,7 @@
 <?php
 namespace yii2module\rest_client\models;
 
-use woop\extension\store\ActiveStore;
+use yii2lab\store\ActiveStore;
 
 class Login extends ActiveStore
 {
