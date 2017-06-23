@@ -1,5 +1,5 @@
 {
-    "name": "yii2lab/yii2-rest-client",
+    "name": "yii2module/yii2-rest-client",
     "type": "yii2-extension",
     "authors": [
         {
@@ -10,7 +10,7 @@
 	"minimum-stability": "dev",
 	"autoload": {
         "psr-4": {
-             "yii2lab\\rest_client\\": "src"
+             "yii2module\\rest_client\\": "src"
          }
     },
     "require": {

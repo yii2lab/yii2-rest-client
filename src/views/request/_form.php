@@ -1,8 +1,8 @@
 <?php
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
-use yii2lab\rest_client\models\RequestForm;
-use yii2lab\rest_client\helpers\Authorization;
+use yii2module\rest_client\models\RequestForm;
+use yii2module\rest_client\helpers\Authorization;
 
 /**
  * @var \yii\web\View $this

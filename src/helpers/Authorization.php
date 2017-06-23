@@ -1,9 +1,9 @@
 <?php
 
-namespace yii2lab\rest_client\helpers;
+namespace yii2module\rest_client\helpers;
 
 use Yii;
-use yii2lab\rest_client\models\Login;
+use yii2module\rest_client\models\Login;
 
 class Authorization
 {

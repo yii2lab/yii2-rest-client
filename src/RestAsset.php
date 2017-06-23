@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\rest_client;
+namespace yii2module\rest_client;
 
 use yii\web\AssetBundle;
 

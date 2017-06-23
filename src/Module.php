@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\rest_client;
+namespace yii2module\rest_client;
 
 use Yii;
 use yii\base\BootstrapInterface;
@@ -11,7 +11,7 @@ use yii\web\ForbiddenHttpException;
 /**
  * Class Module
  *
- * @property \yii2lab\rest_client\storages\Storage $storage
+ * @property \yii2module\rest_client\storages\Storage $storage
  *
  * @author Roman Zhuravlev <zhuravljov@gmail.com>
  */
@@ -29,7 +29,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'yii2lab\rest_client\controllers';
+    public $controllerNamespace = 'yii2module\rest_client\controllers';
     /**
      * @inheritdoc
      */
@@ -54,14 +54,14 @@ class Module extends \yii\base\Module implements BootstrapInterface
      * @var array
      */
     public $formatters = [
-        'application/json' => 'yii2lab\rest_client\formatters\JsonFormatter',
-        'application/xml' => 'yii2lab\rest_client\formatters\XmlFormatter',
-        'text/html' => 'yii2lab\rest_client\formatters\HtmlFormatter',
+        'application/json' => 'yii2module\rest_client\formatters\JsonFormatter',
+        'application/xml' => 'yii2module\rest_client\formatters\XmlFormatter',
+        'text/html' => 'yii2module\rest_client\formatters\HtmlFormatter',
     ];
     /**
-     * @var \yii2lab\rest_client\storages\Storage|array|string
+     * @var \yii2module\rest_client\storages\Storage|array|string
      */
-    private $_storage = 'yii2lab\rest_client\storages\FileStorage';
+    private $_storage = 'yii2module\rest_client\storages\FileStorage';
     /**
      * @inheritdoc
      */
@@ -133,7 +133,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
     }
 
     /**
-     * @param \yii2lab\rest_client\storages\Storage|array|string $storage
+     * @param \yii2module\rest_client\storages\Storage|array|string $storage
      */
     public function setStorage($storage)
     {
@@ -141,7 +141,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
     }
 
     /**
-     * @return \yii2lab\rest_client\storages\Storage
+     * @return \yii2module\rest_client\storages\Storage
      */
     public function getStorage()
     {

@@ -5,8 +5,8 @@ use yii\helpers\Html;
  * @var \yii\web\View $this
  * @var string $tag
  * @var string $baseUrl
- * @var \yii2lab\rest_client\models\RequestForm $model
- * @var \yii2lab\rest_client\models\ResponseRecord $record
+ * @var \yii2module\rest_client\models\RequestForm $model
+ * @var \yii2module\rest_client\models\ResponseRecord $record
  * @var array $history
  * @var array $collection
  */

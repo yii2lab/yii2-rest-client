@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\rest_client\controllers;
+namespace yii2module\rest_client\controllers;
 
 use Yii;
 use yii\filters\VerbFilter;
@@ -15,7 +15,7 @@ use yii\web\NotFoundHttpException;
 class HistoryController extends Controller
 {
     /**
-     * @var \yii2lab\rest_client\Module
+     * @var \yii2module\rest_client\Module
      */
     public $module;
 

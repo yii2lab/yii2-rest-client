@@ -1,24 +1,24 @@
 <?php
 
-namespace yii2lab\rest_client\storages;
+namespace yii2module\rest_client\storages;
 
 use Yii;
 use yii\base\InvalidParamException;
 use yii\base\Object;
-use yii2lab\rest_client\models\RequestForm;
-use yii2lab\rest_client\models\ResponseRecord;
+use yii2module\rest_client\models\RequestForm;
+use yii2module\rest_client\models\ResponseRecord;
 
 /**
  * Class Storage
  *
- * @property \yii2lab\rest_client\Module $module
+ * @property \yii2module\rest_client\Module $module
  *
  * @author Roman Zhuravlev <zhuravljov@gmail.com>
  */
 abstract class Storage extends Object
 {
     /**
-     * @var \yii2lab\rest_client\Module
+     * @var \yii2module\rest_client\Module
      */
     private $_module;
     /**
@@ -31,7 +31,7 @@ abstract class Storage extends Object
     private $_collection;
 
     /**
-     * @param \yii2lab\rest_client\Module $module
+     * @param \yii2module\rest_client\Module $module
      * @param array $config
      */
     public function __construct($module, $config = [])
@@ -41,7 +41,7 @@ abstract class Storage extends Object
     }
 
     /**
-     * @return \yii2lab\rest_client\Module
+     * @return \yii2module\rest_client\Module
      */
     public function getModule()
     {

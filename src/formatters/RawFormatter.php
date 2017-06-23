@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\rest_client\formatters;
+namespace yii2module\rest_client\formatters;
 
 use yii\base\Object;
 use yii\helpers\Html;
@@ -13,7 +13,7 @@ use yii\helpers\Html;
 class RawFormatter extends Object
 {
     /**
-     * @param \yii2lab\rest_client\models\ResponseRecord $record
+     * @param \yii2module\rest_client\models\ResponseRecord $record
      * @return string
      */
     public function format($record)

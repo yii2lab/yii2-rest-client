@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\rest_client\helpers;
+namespace yii2module\rest_client\helpers;
 
 use Yii;
 use woop\foundation\yii\helpers\FileHelper;

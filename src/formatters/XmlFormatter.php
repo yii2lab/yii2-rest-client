@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\rest_client\formatters;
+namespace yii2module\rest_client\formatters;
 
 use yii\base\ErrorException;
 use yii\helpers\Html;

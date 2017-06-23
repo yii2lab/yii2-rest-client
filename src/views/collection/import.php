@@ -3,7 +3,7 @@ use yii\helpers\Html;
 
 /**
  * @var \yii\web\View $this
- * @var \yii2lab\rest_client\models\ImportForm $model
+ * @var \yii2module\rest_client\models\ImportForm $model
  */
 
 $this->title = 'Import Collection';

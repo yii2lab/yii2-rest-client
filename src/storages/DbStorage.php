@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2lab\rest_client\storages;
+namespace yii2module\rest_client\storages;
 
 use yii\db\Connection;
 use yii\db\Query;

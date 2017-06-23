@@ -1,12 +1,12 @@
 <?php
 
-namespace yii2lab\rest_client\models;
+namespace yii2module\rest_client\models;
 
 use yii\base\InvalidParamException;
 use yii\base\Model;
 use yii\helpers\Json;
 use yii\web\UploadedFile;
-use yii2lab\rest_client\storages\Storage;
+use yii2module\rest_client\storages\Storage;
 
 /**
  * Class ImportForm

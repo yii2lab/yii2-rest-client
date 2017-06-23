@@ -4,7 +4,7 @@ use yii\web\Response;
 
 /**
  * @var \yii\web\View $this
- * @var \yii2lab\rest_client\models\ResponseRecord $record
+ * @var \yii2module\rest_client\models\ResponseRecord $record
  */
 ?>
 <div id="response" class="rest-request-response">
@@ -61,17 +61,17 @@ use yii\web\Response;
             <div id="response-body" class="tab-pane">
                 <?php
                 $contentType = !empty($record->headers['Content-Type']) ? $record->headers['Content-Type'][0] : '';
-                $formatterConfig = 'yii2lab\rest_client\formatters\RawFormatter';
+                $formatterConfig = 'yii2module\rest_client\formatters\RawFormatter';
                 foreach ($this->context->module->formatters as $mimeType => $config) {
                     if (strpos($contentType, $mimeType) === 0) {
                         $formatterConfig = $config;
                         break;
                     }
                 }
-                /** @var \yii2lab\rest_client\formatters\RawFormatter $formatter */
+                /** @var \yii2module\rest_client\formatters\RawFormatter $formatter */
                 $formatter = \Yii::createObject($formatterConfig);
                 echo $formatter->format($record);
-                \yii2lab\rest_client\HighlightAsset::register($this);
+                \yii2module\rest_client\HighlightAsset::register($this);
                 $this->registerJs('hljs.highlightBlock(document.getElementById("response-content"));');
                 $this->registerCss('pre code.hljs {background: transparent}');
                 ?>

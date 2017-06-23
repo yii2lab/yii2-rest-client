@@ -1,17 +1,17 @@
 <?php
 
-namespace yii2lab\rest_client\controllers;
+namespace yii2module\rest_client\controllers;
 
 use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii2lab\rest_client\helpers\ArrayHelper;
-use yii2lab\rest_client\models\RequestEvent;
-use yii2lab\rest_client\models\RequestForm;
-use yii2lab\rest_client\models\ResponseEvent;
-use yii2lab\rest_client\models\ResponseRecord;
-use yii2lab\rest_client\Module;
-use yii2lab\rest_client\helpers\Authorization;
+use yii2module\rest_client\helpers\ArrayHelper;
+use yii2module\rest_client\models\RequestEvent;
+use yii2module\rest_client\models\RequestForm;
+use yii2module\rest_client\models\ResponseEvent;
+use yii2module\rest_client\models\ResponseRecord;
+use yii2module\rest_client\Module;
+use yii2module\rest_client\helpers\Authorization;
 
 /**
  * Class RequestController
@@ -21,7 +21,7 @@ use yii2lab\rest_client\helpers\Authorization;
 class RequestController extends Controller
 {
     /**
-     * @var \yii2lab\rest_client\Module
+     * @var \yii2module\rest_client\Module
      */
     public $module;
     /**

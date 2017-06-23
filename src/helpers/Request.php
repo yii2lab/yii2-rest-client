@@ -1,10 +1,10 @@
 <?php
 
-namespace yii2lab\rest_client\helpers;
+namespace yii2module\rest_client\helpers;
 
 use Yii;
-use yii2lab\rest_client\models\ResponseRecord;
-use yii2lab\rest_client\models\RequestForm;
+use yii2module\rest_client\models\ResponseRecord;
+use yii2module\rest_client\models\RequestForm;
 
 class Request
 {

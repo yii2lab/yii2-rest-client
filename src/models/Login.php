@@ -1,5 +1,5 @@
 <?php
-namespace yii2lab\rest_client\models;
+namespace yii2module\rest_client\models;
 
 use woop\extension\store\ActiveStore;
 

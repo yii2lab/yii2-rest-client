@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2lab\rest_client\controllers;
+namespace yii2module\rest_client\controllers;
 
 use Yii;
 use yii\filters\VerbFilter;
 use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii2lab\rest_client\models\ImportForm;
+use yii2module\rest_client\models\ImportForm;
 
 /**
  * Class CollectionController
@@ -17,7 +17,7 @@ use yii2lab\rest_client\models\ImportForm;
 class CollectionController extends Controller
 {
     /**
-     * @var \yii2lab\rest_client\Module
+     * @var \yii2module\rest_client\Module
      */
     public $module;
 
