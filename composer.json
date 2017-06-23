@@ -13,5 +13,10 @@
              "yii2lab\\rest_client\\": "src"
          }
     },
-    "require": {}
+    "require": {
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-httpclient": "*",
+        "yii2mod/yii2-helpers": "*"
+    }
 }
