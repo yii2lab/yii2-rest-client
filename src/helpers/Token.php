@@ -4,7 +4,7 @@ namespace yii2module\rest_client\helpers;
 
 use Yii;
 use woop\foundation\yii\helpers\FileHelper;
-use woop\extension\store\Store;
+use yii2lab\store\Store;
 
 class Token
 {

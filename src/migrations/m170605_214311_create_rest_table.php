@@ -1,6 +1,6 @@
 <?php
 
-use woop\extension\migration\db\MigrationCreateTable as Migration;
+use yii2lab\migration\db\MigrationCreateTable as Migration;
 
 /**
 * Handles the creation of table `rest`.
