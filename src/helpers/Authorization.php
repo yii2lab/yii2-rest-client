@@ -69,8 +69,8 @@ class Authorization
 
     static public function putTokenInModel($model, $token)
     {
-        if(!empty($token)) {
-            $modelAuth = clone $model;
+        $modelAuth = clone $model;
+		if(!empty($token)) {
             $modelAuth->headerKeys[] = 'Authorization';
             $modelAuth->headerValues[] = $token;
             $modelAuth->headerActives[] = 1;
