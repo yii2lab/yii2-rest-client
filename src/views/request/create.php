@@ -22,7 +22,7 @@ if ($model->method) {
 
 <div class="rest-request-create">
     <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-8">
 
             <?= $this->render('_form', [
                 'baseUrl' => $baseUrl,
@@ -33,9 +33,9 @@ if ($model->method) {
             ]) ?>
 
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-4">
 
-            <ul class="request-lists nav nav-tabs nav-justified">
+            <ul class="request-lists nav nav-tabs">
                 <li>
                     <a href="#collection" data-toggle="tab">
                         Collection
