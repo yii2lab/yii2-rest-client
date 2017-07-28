@@ -8,12 +8,14 @@ use yii2lab\test\models\Login;
 class Authorization
 {
 
+	public $password = 'Wwwqqq111';
+	
     static public function loginListForSelect() {
-	    $loginList = Login::all(['is_active' => 1]);
+		$loginList = Yii::$app->account->test->getAll();
 	    $loginListForSelect = [];
 	    if(!empty($loginList)) {
             foreach($loginList as $login) {
-                $loginListForSelect[$login['login']] = $login['login'] . ' - ' . $login['description'];
+                $loginListForSelect[$login->login] = $login->login . ' - ' . $login->username;
             }
         }
         $loginListForSelect = ArrayHelper::merge(['' => 'Guest'], $loginListForSelect);
@@ -22,13 +24,9 @@ class Authorization
 
     static public function getToken($login)
     {
-        $loginItem = Login::one($login);
-        if(empty($loginItem)) {
-            return null;
-        }
         $modelAuth = Request::createRequestFrom('auth', 'post', [
             'login' => $login,
-            'password' => $loginItem['password'],
+            'password' => $this->password,
         ]);
 	    
         $response = Request::httpRequest($modelAuth);
