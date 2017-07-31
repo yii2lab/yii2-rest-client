@@ -8,7 +8,7 @@ use yii2lab\test\models\Login;
 class Authorization
 {
 
-	public $password = 'Wwwqqq111';
+	public static $password = 'Wwwqqq111';
 	
     static public function loginListForSelect() {
 		$loginList = Yii::$app->account->test->getAll();
@@ -26,7 +26,7 @@ class Authorization
     {
         $modelAuth = Request::createRequestFrom('auth', 'post', [
             'login' => $login,
-            'password' => $this->password,
+            'password' => self::$password,
         ]);
 	    
         $response = Request::httpRequest($modelAuth);
