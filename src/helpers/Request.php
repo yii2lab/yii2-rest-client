@@ -3,6 +3,8 @@
 namespace yii2module\rest_client\helpers;
 
 use Yii;
+use yii\httpclient\Exception;
+use yii\web\NotFoundHttpException;
 use yii2module\rest_client\models\ResponseRecord;
 use yii2module\rest_client\models\RequestForm;
 
@@ -25,12 +27,22 @@ class Request
         /** @var \yii\httpclient\Client $client */
         $client = Yii::createObject(Yii::$app->controller->module->clientConfig);
         $client->baseUrl = Yii::$app->controller->module->baseUrl;
-        $response = $client->createRequest()
-            ->setMethod($model->method)
-            ->setUrl($model->getUri())
-            ->setData($model->getBodyParams())
-            ->setHeaders($model->getHeaders())
-            ->send();
+        try {
+			$response = $client->createRequest()
+				->setMethod($model->method)
+				->setUrl($model->getUri())
+				->setData($model->getBodyParams())
+				->setHeaders($model->getHeaders())
+				->send();
+		} catch(Exception $e) {
+        	if($e->getCode() == 2) {
+        		$message = 'Possible reasons:
+						<ul>
+							<li>You have an incorrect domain. See the link: <a href="' . $client->baseUrl . '" target="_blank">' . $client->baseUrl . '</a></li>
+						</ul>';
+		        throw new NotFoundHttpException($message);
+	        }
+		}
         return $response;
     }
 
