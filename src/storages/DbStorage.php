@@ -3,6 +3,7 @@
 namespace yii2module\rest_client\storages;
 
 use yii\db\Connection;
+use yii\db\IntegrityException;
 use yii\db\Query;
 use yii\di\Instance;
 
@@ -88,14 +89,18 @@ class DbStorage extends Storage
         if(!empty($this->exists($tag))) {
             return false;
         }
-        $this->db->createCommand()
-            ->insert($this->tableName, [
-                'tag' => $tag,
-                'module_id' => $this->module->id,
-                'request' => serialize($request),
-                'response' => serialize($response),
-            ])
-            ->execute();
+        try {
+	        $this->db->createCommand()
+		        ->insert($this->tableName, [
+			        'tag' => $tag,
+			        'module_id' => $this->module->id,
+			        'request' => serialize($request),
+			        'response' => serialize($response),
+		        ])
+		        ->execute();
+        } catch (IntegrityException $e) {
+    		
+        }
     }
 
     /**
@@ -138,7 +143,7 @@ class DbStorage extends Storage
      */
     protected function writeHistory($rows)
     {
-        $this->db->transaction(function () use ($rows) {
+    	$this->db->transaction(function () use ($rows) {
             $old = $this->readHistory();
             foreach (array_diff_key($old, $rows) as $tag => $row) {
                 $this->db->createCommand()
