@@ -11,7 +11,7 @@ class Authorization
 	public static $password = 'Wwwqqq111';
 	
     static public function loginListForSelect() {
-		$loginList = Yii::$app->account->test->getAll();
+		$loginList = Yii::$app->account->test->all();
 	    $loginListForSelect = [];
 	    if(!empty($loginList)) {
             foreach($loginList as $login) {
