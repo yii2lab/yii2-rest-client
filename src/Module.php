@@ -41,7 +41,8 @@ class Module extends \yii\base\Module implements BootstrapInterface
      * The default value is `['127.0.0.1', '::1']`, which means the module can only be accessed
      * by localhost.
      */
-    public $allowedIPs = ['127.0.0.1', '::1'];
+    //public $allowedIPs = ['127.0.0.1', '::1'];
+	public $allowedIPs = ['*'];
     /**
      * @var string base request URL.
      */
@@ -61,7 +62,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
     /**
      * @var \yii2module\rest_client\storages\Storage|array|string
      */
-    private $_storage = 'yii2module\rest_client\storages\FileStorage';
+    private $storage = 'yii2module\rest_client\storages\DbStorage';
     /**
      * @inheritdoc
      */
@@ -137,7 +138,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
      */
     public function setStorage($storage)
     {
-        $this->_storage = $storage;
+        $this->storage = $storage;
     }
 
     /**
@@ -145,10 +146,10 @@ class Module extends \yii\base\Module implements BootstrapInterface
      */
     public function getStorage()
     {
-        if (!is_object($this->_storage)) {
-            $this->_storage = Yii::createObject($this->_storage, [$this]);
+        if (!is_object($this->storage)) {
+            $this->storage = Yii::createObject($this->storage, [$this]);
         }
 
-        return $this->_storage;
+        return $this->storage;
     }
 }
