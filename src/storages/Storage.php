@@ -73,6 +73,7 @@ abstract class Storage extends Object
     {
         $requestAttributes = $model->getAttributes();
         unset($requestAttributes['tab']);
+	    unset($requestAttributes['description']);
         ksort($requestAttributes);
         $requestAttributesSerialized = serialize($requestAttributes);
         $tag = hash('crc32b', $requestAttributesSerialized);
