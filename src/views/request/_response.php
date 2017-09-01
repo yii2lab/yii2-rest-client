@@ -78,13 +78,13 @@ use yii\web\Response;
             </div><!-- #response-body -->
 
             <div id="response-headers" class="tab-pane">
-                <table class="table">
-                    <thead>
+                <table class="table table-striped table-bordered">
+                    <!--<thead>
                         <tr>
                             <th>Name</th>
                             <th>Value</th>
                         </tr>
-                    </thead>
+                    </thead>-->
                     <tbody>
                         <?php foreach ($record->headers as $name => $values): ?>
                             <?php foreach ($values as $value): ?>
