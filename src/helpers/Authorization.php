@@ -24,9 +24,12 @@ class Authorization
 
     static public function getToken($login)
     {
-        $modelAuth = Request::createRequestFrom('auth', 'post', [
+	    $user = $loginList = Yii::$app->account->test->oneByLogin($login);
+	    $password = !empty($user->password) ?  $user->password: self::$password;
+	    
+    	$modelAuth = Request::createRequestFrom('auth', 'post', [
             'login' => $login,
-            'password' => self::$password,
+            'password' => $password,
         ]);
 	    
         $response = Request::httpRequest($modelAuth);
