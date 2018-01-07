@@ -7,6 +7,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii2lab\helpers\Behavior;
 use yii2module\rest_client\models\ImportForm;
 
 /**
@@ -27,13 +28,10 @@ class CollectionController extends Controller
     public function behaviors()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'link' => ['post'],
-                    'unlink' => ['post'],
-                ],
-            ],
+	        'verb' => Behavior::verb([
+		        'link' => ['post'],
+		        'unlink' => ['post'],
+	        ]),
         ];
     }
 

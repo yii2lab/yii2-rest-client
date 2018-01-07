@@ -6,6 +6,7 @@ use Yii;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii2lab\helpers\Behavior;
 
 /**
  * Class HistoryController
@@ -25,13 +26,10 @@ class HistoryController extends Controller
     public function behaviors()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                    'clear' => ['post'],
-                ],
-            ],
+	        'verb' => Behavior::verb([
+		        'delete' => ['post'],
+		        'clear' => ['post'],
+	        ]),
         ];
     }
     public function actionDelete($tag)
