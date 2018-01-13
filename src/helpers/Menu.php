@@ -2,7 +2,6 @@
 
 namespace yii2module\rest_client\helpers;
 
-use common\enums\rbac\PermissionEnum;
 use yii2lab\helpers\ModuleHelper;
 
 class Menu {
