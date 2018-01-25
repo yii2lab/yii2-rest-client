@@ -2,6 +2,7 @@
 
 namespace yii2module\rest_client\helpers;
 
+use common\enums\rbac\PermissionEnum;
 use yii2lab\helpers\ModuleHelper;
 
 class Menu {
@@ -11,6 +12,7 @@ class Menu {
 			'label' => 'API',
 			'items' => self::getVersionMenu(),
 			'visible' => YII_ENV_DEV,
+			'access' => [PermissionEnum::REST_CLIENT_ALL],
 		];
 	}
 	
