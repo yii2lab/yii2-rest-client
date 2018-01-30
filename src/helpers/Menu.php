@@ -7,22 +7,22 @@ use yii2lab\helpers\ModuleHelper;
 
 class Menu {
 	
-	public static function getMenu() {
+	public function getMenu() {
 		return [
 			'label' => 'API',
-			'items' => self::getVersionMenu(),
+			'items' => $this->getVersionMenu(),
 			'visible' => YII_ENV_DEV,
 			'access' => [PermissionEnum::REST_CLIENT_ALL],
 		];
 	}
 	
-	private static function getVersionMenu() {
+	private function getVersionMenu() {
 		$all = ModuleHelper::allByApp(FRONTEND);
 		$menu = [];
 		foreach($all as $name => $config) {
 			if($config['class'] == 'yii2module\\rest_client\\Module') {
 				$menu[] = [
-					'label' => self::parseVersion($name),
+					'label' => $this->parseVersion($name),
 					'url' => $name,
 					'module' => $name,
 				];
@@ -31,7 +31,7 @@ class Menu {
 		return $menu;
 	}
 	
-	private static function parseVersion($name) {
+	private function parseVersion($name) {
 		preg_match('#(v[0-9]+)#', $name, $matches);
 		return !empty($matches[1]) ? $matches[1] : $name;
 	}
