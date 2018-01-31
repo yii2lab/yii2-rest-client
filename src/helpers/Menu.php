@@ -7,7 +7,7 @@ use yii2lab\helpers\ModuleHelper;
 
 class Menu {
 	
-	public function getMenu() {
+	public function toArray() {
 		return [
 			'label' => 'API',
 			'items' => $this->getVersionMenu(),
