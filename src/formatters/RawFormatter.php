@@ -2,7 +2,7 @@
 
 namespace yii2module\rest_client\formatters;
 
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\helpers\Html;
 
 /**
@@ -10,7 +10,7 @@ use yii\helpers\Html;
  *
  * @author Roman Zhuravlev <zhuravljov@gmail.com>
  */
-class RawFormatter extends Object
+class RawFormatter extends BaseObject
 {
     /**
      * @param \yii2module\rest_client\models\ResponseRecord $record
