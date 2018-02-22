@@ -20,7 +20,7 @@ return [
 	'modules' => [
 		// ...
 		'rest-v1' => [
-			'class' => 'yii2module\rest_client\Module',
+			'class' => 'yii2lab\rest\web\Module',
 			'baseUrl' => env('url.api') . 'v1',
 			'as access' => Config::genAccess(PermissionEnum::REST_CLIENT_ALL),
 		],
