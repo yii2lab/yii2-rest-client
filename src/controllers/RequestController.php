@@ -32,7 +32,7 @@ class RequestController extends Controller
     public function actionCreate($tag = null)
     {
         /** @var RequestForm $model */
-        $model = Yii::createObject(RequestForm::className());
+        $model = Yii::createObject(RequestForm::class);
         $record = new ResponseRecord();
 
         if (

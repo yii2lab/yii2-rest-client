@@ -48,7 +48,7 @@ class Request
 
     static public function createRequestFrom($endpoint, $method = 'get', $body = [], $header = [])
     {
-        $modelAuth = Yii::createObject(RequestForm::className());
+        $modelAuth = Yii::createObject(RequestForm::class);
         $modelAuth->method = $method;
         $modelAuth->endpoint = $endpoint;
         if(!empty($body)) {
